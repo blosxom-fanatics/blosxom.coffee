@@ -9,7 +9,7 @@ class Blosxom
     constructor: (@config) ->
 
     run: ->
-        entries = @getEntries().sort (a, b) -> b.datetime - b.datetime
+        entries = @getEntries().sort (a, b) -> b.datetime - a.datetime
         [_, path_info, flavour] = (process.env['PATH_INFO'] || '/').match(/(.+?)(\.[^.]+)?$/)
         flavour ||= @config.default_flavour
 
